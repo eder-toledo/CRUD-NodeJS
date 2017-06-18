@@ -1,0 +1,36 @@
+extends ./layout.jade
+
+block content
+    div(style="position: absolute;left: 50%;margin-left: -200px;")
+        div(class="demo-card-square mdl-card mdl-shadow--2dp")
+            div(class="mdl-card__title")
+                h2(class="mdl-card__title-text") Bienvenido
+            div(class="mdl-card__supporting-text")
+                h3 Iniciar sesión
+                form(action="/app/edit/#{persona.IDPersona}" method="post")
+                    p
+                        label Nombre
+                    div(class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label")
+                        input(class="mdl-textfield__input" type="text" id="nombre" name="nombre" value="#{persona.Nombre}")
+                        label(class="mdl-textfield__label" for="nombre")
+
+                    p
+                        label Apellidos
+                    div(class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label")
+                        input(class="mdl-textfield__input" type="text" id="apellidos" name="apellidos" value="#{persona.Apellidos}")
+                        label(class="mdl-textfield__label" for="apellidos")
+
+                    p
+                        label Correo
+                    div(class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label")
+                        input(class="mdl-textfield__input" type="email" id="email" name="email" value="#{persona.email}")
+                        label(class="mdl-textfield__label" for="email")
+
+                        p
+                        label Contraseña
+                    div(class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label")
+                        input(class="mdl-textfield__input" type="text" id="password" name="password" value="#{persona.password}")
+                        label(class="mdl-textfield__label" for="password")
+                    button(class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="submit") Guardar
+                a(href="/app") Regresar
+                p #{mensaje}

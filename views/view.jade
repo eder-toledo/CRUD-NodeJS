@@ -1,0 +1,16 @@
+extends ./layout.jade
+
+block content
+    div(style="position: absolute;left: 50%;margin-left: -200px;")
+        div(class="demo-card-square mdl-card mdl-shadow--2dp")
+            div(class="mdl-card__title")
+                h2(class="mdl-card__title-text") Detalles de usuario
+            div(class="mdl-card__supporting-text")
+                p Nombre:
+                p #{persona.Nombre}
+                p Apellidos:
+                p #{persona.Apellidos}
+                p Correo:
+                p #{persona.email}
+                a(href="/app") Regresar
+                p #{mensaje}

@@ -1,0 +1,25 @@
+extends ./layout.jade
+
+block content
+    
+    center
+        h4 Listado de usuarios
+            a(href="/app/new" style="float:right; margin-right:50px" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent") Nuevo
+
+        table(class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="text-align: left;")
+            thead
+                tr
+                    th(class="mdl-data-table__cell--non-numeric") Nombre
+                    th Apellidos
+                    th Email
+                    th Acciones
+            tbody
+                - for(var i=0; i < personas.length; i++)
+                    tr
+                        td #{personas[i].Nombre}
+                        td #{personas[i].Apellidos}
+                        td #{personas[i].email}
+                        td
+                            a(class="mdl-button mdl-js-button mdl-button--primary" href="/app/edit/#{personas[i].IDPersona}") Editar
+                            a(class="mdl-button mdl-js-button mdl-button--primary" href="/app/delete/#{personas[i].IDPersona}") Eliminar
+                            a(class="mdl-button mdl-js-button mdl-button--primary" href="/app/view/#{personas[i].IDPersona}") Visualizar
